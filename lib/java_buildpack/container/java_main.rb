@@ -59,7 +59,7 @@ module JavaBuildpack
           @droplet.additional_libraries.insert 0, @application.root
         end
 
-        classpath = @spring_boot_utils.is?(@application) ? '-cp $PWD/tts-0.0.1-jar-with-dependencies.jar' : @droplet.additional_libraries.as_classpath
+        classpath = @spring_boot_utils.is?(@application) ? '-cp $PWD/.' : @droplet.additional_libraries.as_classpath
         release_text(classpath)
       end
 
